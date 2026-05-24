@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=64", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llm-multimodel-orchestrator"
+version = "0.1.0"
+description = "Parallel multi-LLM orchestration with retry, consensus voting, and provider-agnostic abstraction."
+readme = "README.md"
+authors = [{ name = "Huang Heng", email = "me@huangheng.dev" }]
+license = { text = "MIT" }
+requires-python = ">=3.9"
+keywords = ["llm", "ai", "orchestrator", "multi-model", "consensus", "openai", "anthropic", "gemini"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "httpx>=0.25",
+    "pydantic>=2.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7", "pytest-asyncio>=0.21", "ruff>=0.1"]
+
+[project.urls]
+Homepage = "https://github.com/huangheng-dev/llm-multimodel-orchestrator"
+Repository = "https://github.com/huangheng-dev/llm-multimodel-orchestrator"
+Issues = "https://github.com/huangheng-dev/llm-multimodel-orchestrator/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
